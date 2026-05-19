@@ -359,11 +359,16 @@ section {
     align-items: stretch;
 }
 
-.space
-{
+.space {
     display: block;
     position: relative;
     padding: 100px;
+}
+
+.sub-space {
+    display: block;
+    position: relative;
+    padding: 50px;
 }
 
 /* OLD: Layer 1: Huge ghosted background text — commented out
