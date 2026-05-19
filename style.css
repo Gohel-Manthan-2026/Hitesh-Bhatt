@@ -390,9 +390,10 @@ section {
     z-index: 0;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: center;
     /* distribute rows evenly across 100vh */
     overflow: hidden;
+    gap : 50px ;
     pointer-events: none;
     user-select: none;
 }
