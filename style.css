@@ -359,8 +359,16 @@ section {
     align-items: stretch;
 }
 
+.space
+{
+    display: block;
+    position: relative;
+    padding: 100px;
+}
+
 /* OLD: Layer 1: Huge ghosted background text — commented out
-.hero-bg-text {
+
+-bg-text {
     position: absolute;
     top: 50%;
     left: 50%;
