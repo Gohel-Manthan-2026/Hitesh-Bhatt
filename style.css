@@ -349,7 +349,7 @@ section {
    cursive name, floating pills, bottom cards
 ============================================ */
 .hero {
-    height: 100vh;
+    height: 90vh;
     min-height: 600px;
     position: relative;
     overflow: hidden;
