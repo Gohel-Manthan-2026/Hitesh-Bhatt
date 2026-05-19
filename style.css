@@ -163,7 +163,7 @@ ul {
 
 section {
     padding: 7rem 0;
-    margin-bottom: 6rem;
+    margin-bottom: 100px;
     /* Gap between sections */
     position: relative;
 }
@@ -349,11 +349,12 @@ section {
    cursive name, floating pills, bottom cards
 ============================================ */
 .hero {
-    height: 90vh;
+    height: 100vh;
     min-height: 600px;
     position: relative;
     overflow: hidden;
     background: var(--bg-secondary);
+    margin-bottom: 100px;
     display: flex;
     align-items: stretch;
 }
@@ -704,7 +705,7 @@ section {
     }
 
     .hero-center-image img {
-        max-width: 100vw;
+        max-width: max-content;
     }
 
     .card-bottom-left
@@ -712,6 +713,7 @@ section {
         left: 2%;
         top: 15%;
         display: flex;
+        justify-content: flex-end;
         height: max-content;
         width: max-content;
     }
@@ -1216,7 +1218,7 @@ textarea.form-control {
     }
 
     .hero-center-image img {
-        max-width: 100vw;
+        max-width: max-content;
     }
 
     .pill-top-left {
@@ -1331,7 +1333,7 @@ textarea.form-control {
     }
 
     .hero-center-image img {
-        max-width: 100vw;
+        max-width: max-content;
     }
 
     /* Pills hidden on mobile — clean look */
@@ -1486,7 +1488,7 @@ textarea.form-control {
     }
 
     .hero-center-image img {
-        max-width: 100vw;
+        max-width: max-content;
     }
 
     /* Bottom cards — only icons on very small screens */
@@ -1616,7 +1618,7 @@ textarea.form-control {
     }
 
     .hero-center-image img {
-        max-width: 100vw;
+        max-width: max-content;
     }
 
     .hero-cta .btn {
@@ -1685,7 +1687,7 @@ textarea.form-control {
     }
 
     .hero-center-image img {
-        max-width: 100vw;
+        max-width: max-content;
     }
 
     .hero-card {
