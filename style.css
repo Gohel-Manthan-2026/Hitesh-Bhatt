@@ -720,7 +720,7 @@ section {
 
     .card-bottom-right {
         right: 2%;
-        top: 15%;
+        top: 25%;
         display: flex;
         height: max-content;
         width: max-content;
@@ -1498,7 +1498,7 @@ textarea.form-control {
     }
 
     .hero-card-info {
-        display: none;
+        display: visible;
     }
 
     /* Show only icon */
