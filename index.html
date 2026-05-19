@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Academy | Master Software Engineering</title>
+    <meta name="description"
+        content="Learn Full-Stack Web Development and Software Engineering with expert-led courses, tutorials, and notes.">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Ambient Background Glow -->
+    <div class="ambient-glow"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#" class="brand">
+                <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5Z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                </svg>
+                Academy<span>.</span>
+            </a>
+            <div class="nav-links">
+                <a href="#home" class="active">Home</a>
+                <a href="#courses">Courses</a>
+                <a href="#notes">Notes</a>
+                <a href="#lectures">Lectures</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-btn" aria-label="Toggle Dark Mode">
+                    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" style="display:none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ============================================
+         HERO SECTION - Full 100vh Layered Layout
+         Inspired by the reference design:
+         BG text > Centered image > Script name > Pills > Bottom cards > CTA
+    ============================================ -->
+    <header id="home" class="hero">
+
+        <!-- OLD: Layer 1: Huge ghosted background text (commented out) -->
+        <!-- <div class="hero-bg-text" aria-hidden="true">HITESH BHATT</div> -->
+
+        <!-- NEW: Infinite left-to-right scrolling marquee background -->
+        <div class="hero-marquee" aria-hidden="true">
+            <!-- Each row slides at a different speed for depth effect -->
+            <div class="marquee-row marquee-row--1">
+                <div class="marquee-track">
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <!-- Duplicate for seamless loop -->
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                </div>
+            </div>
+            <div class="marquee-row marquee-row--2">
+                <div class="marquee-track marquee-track--reverse">
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                </div>
+            </div>
+            <div class="marquee-row marquee-row--3">
+                <div class="marquee-track">
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                </div>
+            </div>
+            <div class="marquee-row marquee-row--4">
+                <div class="marquee-track marquee-track--reverse">
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                </div>
+            </div>
+            <div class="marquee-row marquee-row--5">
+                <div class="marquee-track">
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                    <span>HITESH BHATT</span><span>HITESH BHATT</span><span>HITESH BHATT</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Layer 2: Centered Profile Image -->
+        <div class="hero-center-image">
+            <img src="logormpng.png" alt="Hitesh Bhatt"
+                onerror="this.src='https://images.unsplash.com/photo-1568602471122-7832951cc4c5?q=80&w=700&auto=format&fit=crop';">
+        </div>
+
+        <!-- Layer 3: Cursive Script Name overlaid on the image -->
+        <div class="hero-script-name" aria-hidden="true">Hitesh Bhatt</div>
+
+        
+        <!-- Layer 5: Bottom floating info cards -->
+        <div class="hero-card card-bottom-left">
+            <div class="hero-card-icon">📚</div>
+            <div class="hero-card-info">
+                <div class="hero-card-title">Expert's Lectures</div>
+                <div class="hero-card-sub">With Notes</div>
+            </div>
+        </div>
+        <div class="hero-card card-bottom-right">
+            <div class="hero-card-icon">🏆</div>
+            <div class="hero-card-info">
+                <div class="hero-card-title">Competitive Exams</div>
+                <div class="hero-card-sub">Start Your Journey</div>
+            </div>
+        </div>
+
+
+    </header>
+
+    <!-- COURSES Section -->
+    <section id="courses" class="container">
+        <div class="section-header">
+            <h2>Premium Masterclasses</h2>
+            <p>Comprehensive, deep-dive learning paths designed to accelerate your career and build your engineering
+                intuition.</p>
+        </div>
+
+        <div id="courses-filters" class="filters">
+            <button class="filter-btn active" data-filter="all">All Programs</button>
+            <button class="filter-btn" data-filter="web-dev">Web Development</button>
+            <button class="filter-btn" data-filter="software-engineering">Software Engineering</button>
+        </div>
+
+        <div id="courses-grid" class="grid">
+            <!-- Course Card 1 -->
+            <div class="card filter-item" data-category="web-dev">
+                <div class="card-img-wrapper">
+                    <div class="gradient-bg grad-1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+                            <polyline points="21 15 16 10 5 21"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="tag">Web Dev</span>
+                    <h3>Full-Stack MERN Mastery</h3>
+                    <p>Build massively scalable web applications from scratch using MongoDB, Express, React, Node.js,
+                        and enterprise-grade design patterns.</p>
+                    <a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+                        style="width: 100%;">Enroll on Udemy</a>
+                </div>
+            </div>
+            <!-- Course Card 2 -->
+            <div class="card filter-item" data-category="software-engineering">
+                <div class="card-img-wrapper">
+                    <div class="gradient-bg grad-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="tag">Engineering</span>
+                    <h3>Data Structures & Algorithms</h3>
+                    <p>Crack top-tier coding interviews with a profound, visual understanding of algorithms, dynamic
+                        programming, trees, and graphs.</p>
+                    <a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+                        style="width: 100%;">Enroll on Udemy</a>
+                </div>
+            </div>
+            <!-- Course Card 3 -->
+            <div class="card filter-item" data-category="web-dev">
+                <div class="card-img-wrapper">
+                    <div class="gradient-bg grad-3">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                            <polyline points="2 17 12 22 22 17"></polyline>
+                            <polyline points="2 12 12 17 22 12"></polyline>
+                        </svg>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="tag">Web Dev</span>
+                    <h3>Advanced Frontend Architecture</h3>
+                    <p>Elevate your frontend skills to a senior level with complex state management, render
+                        optimization, Webpack, and Next.js SSR.</p>
+                    <a href="https://www.udemy.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary"
+                        style="width: 100%;">Enroll on Udemy</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- NOTES & PDFs Section -->
+    <section id="notes">
+        <div class="container">
+            <div class="section-header">
+                <h2>University Resources</h2>
+                <p>Downloadable, meticulously organized study guides, cheat sheets, and lecture notes for your
+                    university journey.</p>
+            </div>
+
+            <div id="notes-filters" class="filters">
+                <button class="filter-btn active" data-filter="all">All Semesters</button>
+                <button class="filter-btn" data-filter="fy-bca">First Year (FY)</button>
+                <button class="filter-btn" data-filter="sy-bca">Second Year (SY)</button>
+                <button class="filter-btn" data-filter="ty-bca">Third Year (TY)</button>
+            </div>
+
+            <div id="notes-list" class="notes-list">
+                <!-- Note 1 -->
+                <div class="note-item filter-item" data-category="fy-bca">
+                    <div class="note-info">
+                        <div class="note-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="note-title">Introduction to C Programming</div>
+                            <div class="note-meta">PDF Document • 2.4 MB • Updated Fall 2025</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;"
+                        target="_blank">Download</a>
+                </div>
+                <!-- Note 2 -->
+                <div class="note-item filter-item" data-category="sy-bca">
+                    <div class="note-info">
+                        <div class="note-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="note-title">Database Management Systems (SQL)</div>
+                            <div class="note-meta">PDF Document • 3.1 MB • Updated Spring 2026</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;"
+                        target="_blank">Download</a>
+                </div>
+                <!-- Note 3 -->
+                <div class="note-item filter-item" data-category="ty-bca">
+                    <div class="note-info">
+                        <div class="note-icon-box">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                                <polyline points="14 2 14 8 20 8"></polyline>
+                                <line x1="16" y1="13" x2="8" y2="13"></line>
+                                <line x1="16" y1="17" x2="8" y2="17"></line>
+                                <polyline points="10 9 9 9 8 9"></polyline>
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="note-title">Advanced Web Programming with PHP</div>
+                            <div class="note-meta">PDF Document • 4.5 MB • Updated Fall 2026</div>
+                        </div>
+                    </div>
+                    <a href="#" class="btn btn-secondary" style="padding: 0.5rem 1.5rem; font-size: 0.9rem;"
+                        target="_blank">Download</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YT LECTURES Section -->
+    <section id="lectures" class="container">
+        <div class="section-header">
+            <h2>Free YouTube Content</h2>
+            <p>Free tutorials, architectural deep dives, and tech insights directly from our channel.</p>
+        </div>
+
+        <div id="lectures-filters" class="filters">
+            <button class="filter-btn active" data-filter="all">All Videos</button>
+            <button class="filter-btn" data-filter="tech-tutorials">Tech Tutorials</button>
+            <button class="filter-btn" data-filter="ai-tools">AI For Devs</button>
+            <button class="filter-btn" data-filter="shorts">Beyond Boundary Shorts</button>
+        </div>
+
+        <div id="lectures-grid" class="grid">
+            <!-- Video 1 -->
+            <div class="card filter-item" data-category="tech-tutorials">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <span class="tag">Tech Tutorials</span>
+                    <h3>React in 100 Seconds</h3>
+                    <p>A rapid, comprehensive breakdown of React basics, components, and fundamental hooks for absolute
+                        beginners.</p>
+                </div>
+            </div>
+            <!-- Video 2 -->
+            <div class="card filter-item" data-category="ai-tools">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/jNQXAC9IVRw" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <span class="tag">AI For Devs</span>
+                    <h3>10x Your Code with AI</h3>
+                    <p>Learn how to boost your developer productivity using AI code generation, code review, and
+                        advanced debugging tools.</p>
+                </div>
+            </div>
+            <!-- Video 3 -->
+            <div class="card filter-item" data-category="shorts">
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/tgbNymZ7vqY" title="YouTube video player"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen></iframe>
+                </div>
+                <div class="card-content">
+                    <span class="tag">Beyond Boundary</span>
+                    <h3>5 CSS Tricks You Didn't Know</h3>
+                    <p>Quick, modern tips to improve your layout control, OKLCH color spaces, and workflow in under 60
+                        seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT Section -->
+    <section id="about">
+        <div class="container about-grid">
+            <div class="about-img-wrapper">
+                <div class="about-img">
+                    <img src="logormpng.png">
+                </div>
+            </div>
+            <div class="about-text">
+                <span class="tag" style="margin-bottom: 1rem;">Meet The Instructor</span>
+                <h2>Passionate about Code & Education</h2>
+                <p>Hello! I'm a Senior Staff Software Engineer and passionate educator with over a decade of experience
+                    building highly scalable, production-level applications for top tech companies. My core mission is
+                    to bridge the massive gap between academic learning and modern industry demands.</p>
+                <p>Through my specialized premium courses, university-level notes, and open YouTube channel, I aim to
+                    provide world-class, accessible technical education to aspiring developers globally. Whether you're
+                    writing your first line of code or architecting microservices, I'm here to guide you.</p>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 1.5rem;">Let's Connect</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT US Section -->
+    <section id="contact" class="container">
+        <div class="section-header">
+            <h2>Get In Touch</h2>
+            <p>Have a question about a course or want to collaborate? Send us a message and our team will get back to
+                you promptly.</p>
+        </div>
+
+        <div class="contact-container">
+            <form id="contact-form" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" class="form-control" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" class="form-control" placeholder="john@example.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="form-control" placeholder="How can we help you?" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" class="form-control" placeholder="Write your message here..."
+                        required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <a href="#" class="brand">
+                <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2L2 7l10 5 10-5-10-5Z" />
+                    <path d="M2 17l10 5 10-5" />
+                    <path d="M2 12l10 5 10-5" />
+                </svg>
+                Academy<span>.</span>
+            </a>
+            <div class="social-links">
+                <a href="#" aria-label="YouTube">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33 2.78 2.78 0 0 0 1.94 2c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.33 29 29 0 0 0-.46-5.33z">
+                        </path>
+                        <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                    </svg>
+                </a>
+                <a href="#" aria-label="Twitter">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z">
+                        </path>
+                    </svg>
+                </a>
+                <a href="#" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="#" aria-label="GitHub">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path
+                            d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                        </path>
+                    </svg>
+                </a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Academy. Built with modern web standards.</p>
+                <button id="back-to-top" class="back-to-top" aria-label="Back to Top">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="18 15 12 9 6 15"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    
+    <!-- Lenis Smooth Scroll -->
+    <!-- <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script> -->
+
+    <!-- Main Application Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
