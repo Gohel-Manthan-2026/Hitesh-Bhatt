@@ -1,19 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 0. Smooth Scroll (Lenis)
-    const lenis = new Lenis({
-        duration: 1.2,
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-        direction: 'vertical',
-        gestureDirection: 'vertical',
-        smooth: true,
-        smoothTouch: false,
-    });
-
-    function raf(time) {
-        lenis.raf(time);
-        requestAnimationFrame(raf);
-    }
-    requestAnimationFrame(raf);
+    // 0. Smooth Scroll removed as requested
 
     // 1. Theme Toggle
     const themeBtn = document.getElementById('theme-toggle');
@@ -139,114 +125,7 @@ document.addEventListener('DOMContentLoaded', () => {
     backToTopBtn.addEventListener('click', () => {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
-    // 6. Three.js Background Animation
-    const initThreeJS = () => {
-        const canvas = document.getElementById('hero-canvas');
-        if (!canvas || typeof THREE === 'undefined') return;
-
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
-        
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.position.setZ(30);
-
-        // 3D Books acting as particles
-        const bookGeometry = new THREE.BoxGeometry(1.2, 1.6, 0.3);
-        
-        // Multi-material for book: cover and pages
-        const coverMaterial = new THREE.MeshBasicMaterial({ 
-            color: 0x8A2BE2, 
-            transparent: true, 
-            opacity: 0.8,
-            wireframe: false
-        });
-        const pageMaterial = new THREE.MeshBasicMaterial({ 
-            color: 0xE2E8F0,
-            transparent: true,
-            opacity: 0.8
-        });
-        
-        // materials array for BoxGeometry: right, left, top, bottom, front, back
-        const bookMaterials = [
-            pageMaterial,  // right edge (pages)
-            coverMaterial, // left edge (spine)
-            pageMaterial,  // top edge (pages)
-            pageMaterial,  // bottom edge (pages)
-            coverMaterial, // front cover
-            coverMaterial  // back cover
-        ];
-
-        const booksCount = 150;
-        const books = [];
-
-        for(let i = 0; i < booksCount; i++) {
-            const book = new THREE.Mesh(bookGeometry, bookMaterials);
-            
-            // Random position spread across the screen
-            book.position.x = (Math.random() - 0.5) * 100;
-            book.position.y = (Math.random() - 0.5) * 100;
-            book.position.z = (Math.random() - 0.5) * 50;
-            
-            // Random initial rotation
-            book.rotation.x = Math.random() * Math.PI;
-            book.rotation.y = Math.random() * Math.PI;
-            
-            // Store random rotation speeds
-            book.userData = {
-                rotX: (Math.random() - 0.5) * 0.02,
-                rotY: (Math.random() - 0.5) * 0.02,
-                rotZ: (Math.random() - 0.5) * 0.02
-            };
-            
-            // Make them relatively small (approx 25px visual size depending on distance)
-            const scale = Math.random() * 0.5 + 0.5;
-            book.scale.set(scale, scale, scale);
-
-            scene.add(book);
-            books.push(book);
-        }
-
-        // Handle Window Resize
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
-        });
-
-        // Mouse Parallax Interaction
-        let mouseX = 0;
-        let mouseY = 0;
-        document.addEventListener('mousemove', (event) => {
-            mouseX = (event.clientX / window.innerWidth) - 0.5;
-            mouseY = (event.clientY / window.innerHeight) - 0.5;
-        });
-
-        // Animation Loop
-        const animate = () => {
-            requestAnimationFrame(animate);
-
-            // Rotate all books slowly
-            books.forEach(book => {
-                book.rotation.x += book.userData.rotX;
-                book.rotation.y += book.userData.rotY;
-                book.rotation.z += book.userData.rotZ;
-            });
-            
-            // Smooth camera movement based on cursor
-            camera.position.x += (mouseX * 8 - camera.position.x) * 0.05;
-            camera.position.y += (-mouseY * 8 - camera.position.y) * 0.05;
-            camera.lookAt(scene.position);
-
-            renderer.render(scene, camera);
-        };
-
-        animate();
-    };
-
-    // Initialize Three.js immediately
-    initThreeJS();
+    // 6. Three.js Background Animation removed as requested
 
     // 7. Typewriter Animation
     const TypeWriter = function(txtElement, words, wait = 3000) {
