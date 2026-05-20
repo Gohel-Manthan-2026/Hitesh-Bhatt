@@ -14,6 +14,7 @@
     --accent-hover: oklch(0.45 0.2 280);
     --accent-light: oklch(0.95 0.05 280);
     --surface-glass: rgba(255, 255, 255, 0.5);
+    --nav-mobile-bg: rgba(255, 255, 255, 0.85);
     --glow-color: rgba(120, 80, 255, 0.15);
     --glow-shadow: 0 0 20px var(--glow-color);
 
@@ -42,6 +43,7 @@
     --accent-hover: oklch(0.75 0.2 280);
     --accent-light: oklch(0.25 0.05 280);
     --surface-glass: rgba(18, 18, 24, 0.7);
+    --nav-mobile-bg: rgba(18, 18, 24, 0.85);
     --glow-color: rgba(160, 120, 255, 0.15);
 
     --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.4);
@@ -55,11 +57,6 @@
 *::before,
 *::after {
     box-sizing: border-box;
-}
-
-html,
-body {
-    overflow-x: hidden;
 }
 
 * {
@@ -272,17 +269,36 @@ section {
     color: var(--accent-color);
 }
 
+/* .nav-links {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    top : -5px ;
+ 
+}  */
+
 .nav-links {
     display: flex;
-    gap: 2.5rem;
+    gap: 4rem;
     align-items: center;
+    
+    /* ADD THESE LINES */
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background is REQUIRED */
+    backdrop-filter: blur(20px) ;
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 12px; /* Optional: adds rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Optional: glass border */
 }
 
+
 .nav-links a {
+
     font-weight: 500;
     color: var(--text-secondary);
     font-size: 0.95rem;
     position: relative;
+    z-index: 1000;
 }
 
 .nav-links a::after {
@@ -441,7 +457,7 @@ section {
     letter-spacing: -0.03em;
     color: var(--text-primary);
     opacity: 0.06;
-    line-height: 1;
+    line-height: normal;
     flex-shrink: 0;
     padding-right: 2rem;
 }
@@ -1279,32 +1295,65 @@ textarea.form-control {
 @media (max-width: 768px) {
 
     /* Navbar */
+    .nav-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        gap: 20px;
+        min-height: 80px;
+        padding: 1rem 2rem 2rem 1rem;
+    }
+
+    .brand {
+        order: 1;
+        height: 80px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .nav-actions {
+        order: 2;
+        height: 80px;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
     .nav-links {
         display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
+        position: static; /* Let it wrap naturally in the layout flow */
+        order: 3;
         width: 100%;
-        background: var(--surface-glass);
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        background: transparent; /* Inherits glassmorphism background from .navbar */
+        backdrop-filter: none; /* Inherits blur from .navbar */
+        -webkit-backdrop-filter: none;
+        border-radius: 0; /* Reset desktop rounded corners */
+        border: none; /* Reset desktop glass border */ /* Elegant separator from top row */
         flex-direction: column;
         gap: 0;
-        padding: 1rem 0;
-        border-bottom: 1px solid var(--border-color);
-        box-shadow: var(--shadow-lg);
+        padding: 0.5rem 0;
+        margin-top: 0;
+        box-shadow: none; /* Avoid shadow inside navbar */
         z-index: 999;
     }
 
     .nav-links a {
-        padding: 0.85rem 2rem;
+        padding: 0.85rem 1rem;
         width: 100%;
         border-bottom: 1px solid var(--border-color);
         font-size: 1rem;
     }
 
+    .nav-links a:last-child {
+        border-bottom: none; /* Clean finish for the last link */
+    }
+
     .nav-links.active {
         display: flex;
+        visibility: visible;
+        opacity: 1;
     }
 
     .mobile-menu-btn {
@@ -1454,11 +1503,21 @@ textarea.form-control {
     /* Navbar */
     .nav-container {
         padding: 0 1rem;
-        height: 68px;
+        min-height: 68px;
+        height: auto;
     }
 
     .brand {
         font-size: 1.4rem;
+        height: 68px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .nav-actions {
+        height: 68px;
+        display: flex;
+        align-items: center;
     }
 
     .brand-icon {
@@ -1660,12 +1719,22 @@ textarea.form-control {
 @media (max-width: 300px) {
     .nav-container {
         padding: 0 0.75rem;
-        height: 60px;
+        min-height: 60px;
+        height: auto;
     }
 
     .brand {
         font-size: 1.1rem;
         letter-spacing: -0.05em;
+        height: 60px;
+        display: inline-flex;
+        align-items: center;
+    }
+
+    .nav-actions {
+        height: 60px;
+        display: flex;
+        align-items: center;
     }
 
     .brand-icon {
